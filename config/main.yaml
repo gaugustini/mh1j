@@ -43,7 +43,7 @@ segments:
     subsegments:
     - [0x180, asm, main/crt0]
     - [0x3b0, asm, lib/cri/adx_init]
-    - [0xfa0, c, main/cardinit]
+    - [0xfa0, asm, main/cardinit]
     - [0x1010, asm, main/eft]
     - [0x9fb0, asm, main/em]
     - [0xeda0, asm, main/fade]
@@ -51,13 +51,13 @@ segments:
     - [0x1cf70, asm, main/item]
     - [0x1dc90, asm, main/light]
     - [0x1e9e0, asm, main/tex]
-    - [0x1eea0, c, main/load]
+    - [0x1eea0, asm, main/load]
     - [0x1f570, asm, main/main]
-    - [0x203c0, c, main/math]
+    - [0x203c0, asm, main/math]
     - [0x21110, asm, main/parts]
     - [0x214b0, asm, main/yure]
     - [0x21cf0, asm, main/model]
-    - [0x251e0, c, main/scheduler]
+    - [0x251e0, asm, main/scheduler]
     - [0x254c0, asm, main/motion]
     - [0x26940, asm, main/option]
     - [0x275c0, asm, main/cockpit]
@@ -68,15 +68,15 @@ segments:
     - [0x59550, asm, main/softdip]
     - [0x59590, asm, main/sound]
     - [0x5a6a0, asm, main/sprite]
-    - [0x5bc30, c, main/stage]
+    - [0x5bc30, asm, main/stage]
     - [0x61370, asm, main/system]
     # - [0x, asm, tex]
-    - [0x63c30, c, main/trans]
+    - [0x63c30, asm, main/trans]
     - [0x64280, asm, main/weapon]
     - [0x67a40, asm, main/unk]
-    - [0x69340, c, main/prim]
-    - [0x69a30, c, main/vib]
-    - [0x69b60, c, main/view]
+    - [0x69340, asm, main/prim]
+    - [0x69a30, asm, main/vib]
+    - [0x69b60, asm, main/view]
     - [0x69fd0, asm, main/em_work]
     - [0x6ad30, asm, lib/AcrSDK/common/fbms]
     - [0x6b040, asm, lib/AcrSDK/ps2/flps2clay]
@@ -85,7 +85,7 @@ segments:
     - [0x703b0, asm, lib/AcrSDK/ps2/flps2fcurve]
     - [0x713c0, asm, lib/AcrSDK/ps2/flps2math]
     - [0x73a40, asm, lib/AcrSDK/ps2/flps2mesh]
-    - [0x752a0, c, lib/AcrSDK/ps2/flps2ps]
+    - [0x752a0, asm, lib/AcrSDK/ps2/flps2ps]
     - [0x776c0, asm, lib/AcrSDK/ps2/flps2render]
     - [0x79f50, asm, lib/AcrSDK/ps2/flps2shader]
     - [0x87dd0, asm, lib/AcrSDK/ps2/flps2vram]
@@ -123,11 +123,11 @@ segments:
     - [0x1099b8, asm, lib/DTR]
     - [0x109ff8, asm, lib/UNKLIB]
     # DTX, [...], pl2(pro logic 2), RNA, SJMEM, SJRBF, SJUNI, SVM, sdr(1142e0), flsnd
-    - [0x116610, c, main/flfnt]
-    - [0x117fd0, c, main/plAPX]
+    - [0x116610, asm, main/flfnt]
+    - [0x117fd0, asm, main/plAPX]
     - [0x118710, asm, main/eft20]
     - [0x11d5f0, asm, main/bgm]
-    - [0x11f550, c, main/camera]
+    - [0x11f550, asm, main/camera]
     - [0x126140, asm, main/set21]
     - [0x126970, asm, main/quest]
     - [0x12c7e0, asm, main/CngInet]
@@ -157,7 +157,7 @@ segments:
     - [0x17d090, asm, main/cnLBS_download]
     - [0x17d860, asm, main/eft02]
     - [0x17f0e0, asm, main/save]
-    - [0x186470, c, main/demo]
+    - [0x186470, asm, main/demo]
     - [0x186b20, asm, main/netfile]
     - [0x18cdc0, asm, main/hitcoll]
     - [0x190940, asm, main/staff]
@@ -250,7 +250,7 @@ segments:
     - [0x258930, rodata, main/cockpit]
     - [0x25a910, rodata, main/player]
     - [0x25b940, rodata, main/set]
-    - [0x25b990, .rodata, main/stage]
+    - [0x25b990, rodata, main/stage]
     - [0x25bb80, rodata, main/system]
     - [0x25bd60, rodata, main/weapon]
     - [0x25bdd0, rodata, main/fl]
@@ -282,7 +282,7 @@ segments:
     - [0x267430, rodata, main/eft20]
     - [0x267630, rodata, main/bgm]
     - [0x267660, rodata, main/unk]
-    - [0x26b250, .rodata, main/camera]
+    - [0x26b250, rodata, main/camera]
     - [0x26b2f8, rodata, main/quest]
     - [0x26b598, rodata, main/item]
     - [0x26ca18, rodata, main/AQ]
@@ -357,16 +357,16 @@ segments:
     - {vram: 0x38a0e4, type: sbss, name: main/shell}
     - {vram: 0x38a0f0, type: sbss, name: main/sound}
     - {vram: 0x38a0f8, type: sbss, name: main/sprite}
-    - {vram: 0x38a108, type: .sbss, name: main/trans}
+    - {vram: 0x38a108, type: sbss, name: main/trans}
     - {vram: 0x38a110, type: sbss, name: main/view}
-    - {vram: 0x38a114, type: .sbss, name: main/stage}
+    - {vram: 0x38a114, type: sbss, name: main/stage}
     - {vram: 0x38a11c, type: sbss, name: main/unsorted1}
-    - {vram: 0x38a18c, type: .sbss, name: main/prim}
+    - {vram: 0x38a18c, type: sbss, name: main/prim}
     - {vram: 0x38a194, type: sbss, name: main/unsorted2}
 
     # bss start symbol is at 38aa54, that's a linker quirk
     - {vram: 0x38AA80, type: bss, name: lib/cri/adx_init }
-    - {vram: 0x390880, type: .bss, name: main/cardinit}
+    - {vram: 0x390880, type: bss, name: main/cardinit}
     - {vram: 0x390910, type: bss, name: main/eft}
     - {vram: 0x392b10, type: bss, name: main/fade}
     - {vram: 0x392b20, type: bss, name: main/sortme_coll}
@@ -377,14 +377,14 @@ segments:
     - {vram: 0x3955b0, type: bss, name: main/sortme_hierarchy}
     - {vram: 0x395db0, type: bss, name: main/material}
     - {vram: 0x396330, type: bss, name: main/model}
-    - {vram: 0x3963b0, type: .bss, name: main/scheduler}
+    - {vram: 0x3963b0, type: bss, name: main/scheduler}
     - {vram: 0x3965b0, type: bss, name: main/cockpit}
     - {vram: 0x396700, type: bss, name: main/heap}
     - {vram: 0x398a00, type: bss, name: main/set}
     - {vram: 0x398d70, type: bss, name: main/shell}
     - {vram: 0x39c370, type: bss, name: main/sprite}
     - {vram: 0x39c470, type: bss, name: main/system}
-    - {vram: 0x39d870, type: .bss, name: main/trans}
+    - {vram: 0x39d870, type: bss, name: main/trans}
     - {vram: 0x39d970, type: bss, name: main/view}
     - {vram: 0x39dac0, type: bss, name: main/interface} #?
     - {vram: 0x39f230, type: bss, name: main/sortme_lb}
@@ -400,7 +400,7 @@ segments:
     - {vram: 0x3c8de0, type: bss, name: main/motion}
     - {vram: 0x3ccfa0, type: bss, name: main/parts}
     - {vram: 0x3d7fa0, type: bss, name: main/light_2} #?
-    - {vram: 0x3d8230, type: .bss, name: main/stage}
+    - {vram: 0x3d8230, type: bss, name: main/stage}
     - {vram: 0x3d82a0, type: bss, name: main/em_2 } #?
     - {vram: 0x3e4be0, type: bss, name: main/player}
     - {vram: 0x3e9bf0, type: bss, name: main/material_2} #?
